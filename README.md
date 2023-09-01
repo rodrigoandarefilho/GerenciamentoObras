@@ -1,4 +1,4 @@
-# GerenciamentoObras
+# Gerenciamento de Obras
 Uma API que realiza o gerenciamento de uma obra, onde cadastramos os mesmos com seus respectivos responsáveis.
 
 ## Modelo Conceitual
