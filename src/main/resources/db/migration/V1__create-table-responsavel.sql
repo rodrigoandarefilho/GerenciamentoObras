@@ -1,0 +1,8 @@
+CREATE TABLE responsavel(
+
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+
+    PRIMARY KEY(id)
+);
