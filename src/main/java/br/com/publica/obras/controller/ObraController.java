@@ -8,6 +8,7 @@ import br.com.publica.obras.repository.ObraPublicaRepository;
 import br.com.publica.obras.repository.ObraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class ObraController {
     private ObraRepository obraRepository;
 
     @GetMapping
-    public ResponseEntity<List<DadosDetalhamentoObra>> buscarTodasObras(@PageableDefault(size = 10) Pageable paginacao) {
+    public ResponseEntity<List<DadosDetalhamentoObra>> buscarTodasObras(@PageableDefault(size = 10, sort = {"id"}, direction = Sort.Direction.ASC) Pageable paginacao) {
         var obras = obraRepository.findAll(paginacao).stream().map(DadosDetalhamentoObra::new).toList();
         return ResponseEntity.ok(obras);
     }
