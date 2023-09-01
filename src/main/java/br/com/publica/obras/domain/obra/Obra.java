@@ -29,6 +29,8 @@ public abstract class Obra {
     private LocalDate dataCadastro;
     private String descricao;
 
+    //TODO: inserir numero, id com UUID
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "obra_responsavel",
             joinColumns = @JoinColumn(name = "obra_id", referencedColumnName = "id"),

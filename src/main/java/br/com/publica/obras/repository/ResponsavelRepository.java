@@ -10,8 +10,11 @@ public interface ResponsavelRepository extends JpaRepository<Responsavel, BigDec
 
     @Query("""
             select r from Responsavel r
-            where r.id = :id
+            where r.codigo = :codigo
             """)
-    Responsavel findResponsavelById(BigDecimal id);
+    Responsavel findResponsavelById(BigDecimal codigo);
 
+    boolean existsByCodigo(BigDecimal codigo);
+
+    Responsavel findByCodigo(BigDecimal codigo);
 }

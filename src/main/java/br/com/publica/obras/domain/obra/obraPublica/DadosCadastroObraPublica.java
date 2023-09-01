@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public record DadosCadastroObraPublica(
+
         @NotNull @Valid
         DadosObra dadosObra,
         @NotNull(message = "{data_inicio.obrigatorio}")

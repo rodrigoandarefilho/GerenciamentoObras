@@ -28,9 +28,11 @@ public class Responsavel {
     @ManyToMany(mappedBy = "responsaveis",fetch = FetchType.LAZY)
     @JsonBackReference
     private List<Obra> obras = new ArrayList<>();
+    private BigDecimal codigo;
 
     public Responsavel(DadosCadastroResponsavel dadosCadastroResponsavel) {
         this.nome = dadosCadastroResponsavel.nome();
         this.cpf = dadosCadastroResponsavel.cpf();
+        this.codigo = dadosCadastroResponsavel.codigo();
     }
 }

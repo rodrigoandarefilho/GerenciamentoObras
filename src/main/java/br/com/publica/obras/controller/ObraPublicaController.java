@@ -46,10 +46,10 @@ public class ObraPublicaController {
     private ObraPublica validacaoResponsaveis(DadosCadastroObraPublica dadosCadastroObraPublica, ObraPublica obraPublica) {
         List<Responsavel> listaDeResponsaveis = new ArrayList<>();
         for (int i = 0; i < dadosCadastroObraPublica.dadosObra().responsaveis().size(); i++) {
-            if (!responsavelRepository.existsById(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getId())) {
-                throw new ValidacaoException("Id "+ dadosCadastroObraPublica.dadosObra().responsaveis().get(i) + " do responsável informado não existe");
+            if (!responsavelRepository.existsByCodigo(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getCodigo())) {
+                throw new ValidacaoException("O código "+ dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getCodigo() + " do responsável informado não existe");
             }
-            var responsavel = responsavelRepository.findResponsavelById(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getId());
+            var responsavel = responsavelRepository.findByCodigo(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getCodigo());
             listaDeResponsaveis.add(responsavel);
         }
         obraPublica.setResponsaveis(listaDeResponsaveis);

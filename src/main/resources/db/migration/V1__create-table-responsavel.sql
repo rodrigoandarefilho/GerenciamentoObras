@@ -1,6 +1,7 @@
 CREATE TABLE responsavel(
 
     id BIGINT NOT NULL AUTO_INCREMENT,
+    codigo BIGINT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) NOT NULL UNIQUE,
 
