@@ -5,14 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 public interface ResponsavelRepository extends JpaRepository<Responsavel, BigDecimal> {
 
     @Query("""
-            select m from Responsavel m
-            where m.id = :id
+            select r from Responsavel r
+            where r.id = :id
             """)
-    Responsavel findAllMedicosAtivos(BigDecimal id);
+    Responsavel findResponsavelById(BigDecimal id);
 
 }

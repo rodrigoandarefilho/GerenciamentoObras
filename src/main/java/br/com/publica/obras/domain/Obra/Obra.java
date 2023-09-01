@@ -35,6 +35,5 @@ public abstract class Obra {
     public Obra(DadosObra dadosObra) {
         this.descricao = dadosObra.descricao();
         this.dataCadastro = LocalDate.now();
-        this.responsaveis = dadosObra.responsaveis();
     }
 }
