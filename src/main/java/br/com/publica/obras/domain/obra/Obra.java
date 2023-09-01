@@ -19,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "tipo")
 public abstract class Obra {
 
     @Id
@@ -28,8 +29,7 @@ public abstract class Obra {
     @JoinColumn(name = "data_cadastro")
     private LocalDate dataCadastro;
     private String descricao;
-
-    //TODO: inserir numero, id com UUID
+    private BigDecimal numero;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "obra_responsavel",
@@ -42,5 +42,6 @@ public abstract class Obra {
         this.descricao = dadosObra.descricao();
         this.dataCadastro = LocalDate.now();
         this.responsaveis = dadosObra.responsaveis();
+        this.numero = dadosObra.numero();
     }
 }

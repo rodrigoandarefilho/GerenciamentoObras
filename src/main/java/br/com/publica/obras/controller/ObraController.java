@@ -50,9 +50,9 @@ public class ObraController {
         return ResponseEntity.ok(obrasPrivadas);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<List<DadosDetalhamentoObra>> buscarObrasPorResponsavel(@PathVariable BigDecimal id) {
-        var obrasPorResponsavel = obraRepository.findAllObrasPorResponsavel(id).stream().map(DadosDetalhamentoObra::new).toList();
+    @GetMapping("/{codigo}")
+    public ResponseEntity<List<DadosDetalhamentoObra>> buscarObrasPorResponsavel(@PathVariable BigDecimal codigo) {
+        var obrasPorResponsavel = obraRepository.findAllObrasPorResponsavel(codigo).stream().map(DadosDetalhamentoObra::new).toList();
         return ResponseEntity.ok(obrasPorResponsavel);
     }
 }

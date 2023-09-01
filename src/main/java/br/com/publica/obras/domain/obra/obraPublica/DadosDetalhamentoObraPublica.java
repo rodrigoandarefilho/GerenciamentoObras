@@ -11,6 +11,7 @@ public record DadosDetalhamentoObraPublica(BigDecimal id,
                                            LocalDate dataCadastro,
                                            LocalDate dataInicio,
                                            LocalDate dataFim,
+                                           BigDecimal numero,
                                            List<Responsavel> responsaveis) {
     public DadosDetalhamentoObraPublica(ObraPublica obraPublica) {
         this(obraPublica.getId(),
@@ -18,6 +19,7 @@ public record DadosDetalhamentoObraPublica(BigDecimal id,
              obraPublica.getDataCadastro(),
              obraPublica.getDataInicio(),
              obraPublica.getDataFim(),
+             obraPublica.getNumero(),
              obraPublica.getResponsaveis());
     }
 }

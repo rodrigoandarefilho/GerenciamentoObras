@@ -10,6 +10,7 @@ public record DadosDetalhamentoObraPrivada(BigDecimal id,
                                            String descricao,
                                            LocalDate dataCadastro,
                                            String zona, BigDecimal areaTotal,
+                                           BigDecimal numero,
                                            List<Responsavel> responsaveis) {
     public DadosDetalhamentoObraPrivada(ObraPrivada obraPrivada) {
         this(obraPrivada.getId(),
@@ -17,6 +18,7 @@ public record DadosDetalhamentoObraPrivada(BigDecimal id,
              obraPrivada.getDataCadastro(),
              String.valueOf(obraPrivada.getZona()),
              obraPrivada.getAreaTotal(),
+                obraPrivada.getNumero(),
              obraPrivada.getResponsaveis());
     }
 }

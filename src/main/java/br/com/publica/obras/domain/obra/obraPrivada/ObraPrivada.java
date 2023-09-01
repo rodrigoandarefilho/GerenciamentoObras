@@ -2,10 +2,7 @@ package br.com.publica.obras.domain.obra.obraPrivada;
 
 import br.com.publica.obras.domain.obra.Obra;
 import br.com.publica.obras.domain.constantes.TipoDeZona;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("privada")
 public class ObraPrivada extends Obra {
 
     @JoinColumn(name = "zona")

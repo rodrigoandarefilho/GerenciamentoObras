@@ -10,7 +10,7 @@ import java.util.List;
 public interface ObraRepository extends JpaRepository<Obra, BigDecimal> {
 
     @Query("""
-            select DISTINCT m from Obra m LEFT JOIN FETCH m.responsaveis s WHERE s.id = :id
+            select DISTINCT o from Obra o LEFT JOIN FETCH o.responsaveis or WHERE or.codigo = :codigo
             """)
-    List<Obra> findAllObrasPorResponsavel(BigDecimal id);
+    List<Obra> findAllObrasPorResponsavel(BigDecimal codigo);
 }
