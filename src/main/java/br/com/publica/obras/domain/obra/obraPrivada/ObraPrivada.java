@@ -1,6 +1,6 @@
-package br.com.publica.obras.domain.Obra.ObraPrivada;
+package br.com.publica.obras.domain.obra.obraPrivada;
 
-import br.com.publica.obras.domain.Obra.Obra;
+import br.com.publica.obras.domain.obra.Obra;
 import br.com.publica.obras.domain.constantes.TipoDeZona;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

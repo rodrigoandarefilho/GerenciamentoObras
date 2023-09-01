@@ -1,6 +1,6 @@
-package br.com.publica.obras.domain.Obra.ObraPublica;
+package br.com.publica.obras.domain.obra.obraPublica;
 
-import br.com.publica.obras.domain.Obra.Obra;
+import br.com.publica.obras.domain.obra.Obra;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

@@ -1,8 +1,8 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.Obra.ObraPrivada.DadosCadastroObraPrivada;
-import br.com.publica.obras.domain.Obra.ObraPrivada.DadosDetalhamentoObraPrivada;
-import br.com.publica.obras.domain.Obra.ObraPrivada.ObraPrivada;
+import br.com.publica.obras.domain.obra.obraPrivada.DadosCadastroObraPrivada;
+import br.com.publica.obras.domain.obra.obraPrivada.DadosDetalhamentoObraPrivada;
+import br.com.publica.obras.domain.obra.obraPrivada.ObraPrivada;
 import br.com.publica.obras.domain.responsavel.Responsavel;
 import br.com.publica.obras.infra.exception.ValidacaoException;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
@@ -32,7 +32,6 @@ public class ObraPrivadaController {
     public ResponseEntity<DadosDetalhamentoObraPrivada> cadastrarObraPrivada(@RequestBody @Valid DadosCadastroObraPrivada dadosCadastroObraPrivada,
                                                                              UriComponentsBuilder uriComponentsBuilder) {
         var obraPrivada = new ObraPrivada(dadosCadastroObraPrivada);
-        System.out.println(validacaoResponsaveis(dadosCadastroObraPrivada, obraPrivada));
         obraPrivadaRepository.save(validacaoResponsaveis(dadosCadastroObraPrivada, obraPrivada));
         var uri = uriComponentsBuilder.path("/obraprivada/{id}").buildAndExpand(obraPrivada.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPrivada(obraPrivada));

@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.Obra;
+package br.com.publica.obras.domain.obra;
 
 public record DadosDetalhamentoObra(Obra obra) {
 }

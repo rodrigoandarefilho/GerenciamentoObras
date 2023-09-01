@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.Obra;
+package br.com.publica.obras.domain.obra;
 
 import br.com.publica.obras.domain.responsavel.Responsavel;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -30,7 +30,9 @@ public abstract class Obra {
     private String descricao;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "obra_responsavel", joinColumns = @JoinColumn(name = "obra_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "responsavel_id", referencedColumnName = "id"))
+    @JoinTable(name = "obra_responsavel",
+            joinColumns = @JoinColumn(name = "obra_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "responsavel_id", referencedColumnName = "id"))
     @JsonManagedReference
     private List<Responsavel> responsaveis = new ArrayList<>();
 
