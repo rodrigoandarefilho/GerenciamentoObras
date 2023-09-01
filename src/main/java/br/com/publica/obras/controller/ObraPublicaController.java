@@ -4,6 +4,7 @@ import br.com.publica.obras.domain.Obra.ObraPublica.DadosCadastroObraPublica;
 import br.com.publica.obras.domain.Obra.ObraPublica.DadosDetalhamentoObraPublica;
 import br.com.publica.obras.domain.Obra.ObraPublica.ObraPublica;
 import br.com.publica.obras.domain.responsavel.Responsavel;
+import br.com.publica.obras.infra.exception.ValidacaoException;
 import br.com.publica.obras.repository.ObraPublicaRepository;
 import br.com.publica.obras.repository.ResponsavelRepository;
 import jakarta.validation.Valid;
@@ -31,13 +32,8 @@ public class ObraPublicaController {
     public ResponseEntity<DadosDetalhamentoObraPublica> cadastrarObraPublica(@RequestBody @Valid DadosCadastroObraPublica dadosCadastroObraPublica,
                                                                              UriComponentsBuilder uriComponentsBuilder) {
         var obraPublica = new ObraPublica(dadosCadastroObraPublica);
-        List<Responsavel> listaDeResponsaveis = new ArrayList<>();
-        for (int i = 0; i < dadosCadastroObraPublica.dadosObra().responsaveis().size(); i++) {
-            var responsavel = responsavelRepository.findResponsavelById(dadosCadastroObraPublica.dadosObra().responsaveis().get(i));
-            listaDeResponsaveis.add(responsavel);
-        }
-        obraPublica.setResponsaveis(listaDeResponsaveis);
-        obraPublicaRepository.save(obraPublica);
+        System.out.println(validacaoResponsaveis(dadosCadastroObraPublica, obraPublica));
+        //obraPublicaRepository.save(obraPublica);
         var uri = uriComponentsBuilder.path("/obrapublica/{id}").buildAndExpand(obraPublica.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPublica(obraPublica));
     }
@@ -46,5 +42,18 @@ public class ObraPublicaController {
     public ResponseEntity buscarObraPrivadaPorID(@PathVariable BigDecimal id) {
         var obraPublica = obraPublicaRepository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoObraPublica(obraPublica));
+    }
+
+    private ObraPublica validacaoResponsaveis(DadosCadastroObraPublica dadosCadastroObraPublica, ObraPublica obraPublica) {
+        List<Responsavel> listaDeResponsaveis = new ArrayList<>();
+        for (int i = 0; i < dadosCadastroObraPublica.dadosObra().responsaveis().size(); i++) {
+            if (!responsavelRepository.existsById(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getId())) {
+                throw new ValidacaoException("Id "+ dadosCadastroObraPublica.dadosObra().responsaveis().get(i) + " do responsável informado não existe");
+            }
+            var responsavel = responsavelRepository.findResponsavelById(dadosCadastroObraPublica.dadosObra().responsaveis().get(i).getId());
+            listaDeResponsaveis.add(responsavel);
+        }
+        obraPublica.setResponsaveis(listaDeResponsaveis);
+        return obraPublica;
     }
 }

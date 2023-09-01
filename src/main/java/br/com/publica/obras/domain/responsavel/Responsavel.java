@@ -1,6 +1,7 @@
 package br.com.publica.obras.domain.responsavel;
 
 import br.com.publica.obras.domain.Obra.Obra;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -24,7 +25,8 @@ public class Responsavel {
     private BigDecimal id;
     private String nome;
     private String cpf;
-    @ManyToMany(mappedBy = "responsaveis")
+    @ManyToMany(mappedBy = "responsaveis",fetch = FetchType.LAZY)
+    @JsonBackReference
     private List<Obra> obras = new ArrayList<>();
 
     public Responsavel(DadosCadastroResponsavel dadosCadastroResponsavel) {

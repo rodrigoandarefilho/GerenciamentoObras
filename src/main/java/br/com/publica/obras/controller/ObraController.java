@@ -1,8 +1,6 @@
 package br.com.publica.obras.controller;
 
 import br.com.publica.obras.domain.Obra.DadosDetalhamentoObra;
-import br.com.publica.obras.domain.Obra.DadosObra;
-import br.com.publica.obras.domain.Obra.Obra;
 import br.com.publica.obras.domain.Obra.ObraPrivada.DadosDetalhamentoObraPrivada;
 import br.com.publica.obras.domain.Obra.ObraPublica.DadosDetalhamentoObraPublica;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
