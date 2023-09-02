@@ -10,14 +10,14 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 - [x] Listagem de todas as obras relacionadas a um responsável, com base no código do responsável.
 
 ## 🛠️ Tecnologias
-* Java 17
-* Spring Boot 3
-* Maven
+* [Java 17](https://www.oracle.com/java/)
+* [Spring Boot 3](https://spring.io/projects/spring-boot)
+* [Maven](https://maven.apache.org/)
 * [MySQL](https://www.mysql.com/)
-* Hibernate
-* Flyway
-* Lombok
-* Swagger
+* [Hibernate](https://hibernate.org/)
+* [Flyway](https://flywaydb.org/)
+* [Lombok](https://projectlombok.org/)
+* [Swagger](https://swagger.io/)
 
 ## Modelo Conceitual
 * Para a resolução desta API, foi montado um modelo conceitual DER, facilitando o entendimento do mesmo.
