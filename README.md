@@ -33,7 +33,7 @@ Precisa ter instalado e configurado:
 * IntelliJ (versão: 2023.1.5)
 * Realizar o clone do repositório e de preferência deixar na pasta C: do computador
 
-####⚠️ É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
+####❕É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
 Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
 1. DataBase: GERENCIAMENTO_OBRAS
 2. porta: 3306  
@@ -52,7 +52,7 @@ Primeira forma de executar o projeto:
 3. Abra o terminal dentro da pasta "target" e realize o comando abaixo:
 java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://localhost/GERENCIAMENTO_OBRAS -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWORD=1234 -jar target/api-0.0.1-SNAPSHOT.jar
 
-⚠ CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
+❕CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
 * Substituir <endereco: porta>, <username> e <password>, pela sua configuração local !
 - [x] Pronto, problema resolvido, caso seu problema seja endereço, user ou senha diferente do recomendado.
 
