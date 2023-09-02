@@ -24,5 +24,14 @@ Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3)
 
+## 📋 Pré-requisitos
+Precisa ter instalado e configurado:
+* MySQL,
+* Java
+* IntelliJ.
+
+
+
+
 
 
