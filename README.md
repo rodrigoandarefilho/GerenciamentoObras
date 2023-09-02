@@ -25,7 +25,7 @@ Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3)
 
-## 📋 Pré-requisitos
+## 📋 Pré-requisitos / Instalação / Configuração
 Precisa ter instalado e configurado:
 
 * SGBD MySQL (8.0.33 MySQL Community Server - GPL)
@@ -40,7 +40,7 @@ Precisa ter instalado e configurado:
 3. user: root  
 4. senha: 1234
 
-## 📋 Instalação / Configuração
+## 📋 Execução da API
 #### Após ter realizado download, instalado e configurado os pré-requisitos realize os seguintes passos para executar a API:
 1. Ao abrir o IntelliJ e abrir o projeto no mesmo, podemos realizar de duas maneiras a execução do projeto (Figura abaixo)
 
@@ -59,6 +59,13 @@ java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://localhost/GER
 Segunda forma de executar o projeto:
 1.1. Na lateral esquerda abra as seguintes abas "src" > "main" > "java" > "br.com.publica.obras"
 1.2. Clique na seta "verde" e em seguida execute o projeto.
+
+## Documentação da API
+A documentação da API foi realizada com o Swagger, desta forma ao executar a API acessar o link [SWAGGER](http://localhost:8080/swagger-ui/index.html#),
+tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas.
+
+![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/9546ae04-c5fd-4236-978a-f6b4c8b470e6)
+
 
 
 
