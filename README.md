@@ -62,7 +62,7 @@ Segunda forma de executar o projeto:
 
 ## Documentação da API
 A documentação da API foi realizada com o Swagger, desta forma ao executar a API acessar o link [SWAGGER](http://localhost:8080/swagger-ui/index.html#),
-tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas.
+tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/9546ae04-c5fd-4236-978a-f6b4c8b470e6)
 
