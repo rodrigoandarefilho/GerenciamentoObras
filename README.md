@@ -2,7 +2,7 @@
 O projeto consiste em criar uma API de gerenciamento de obras na linguagem de programação Java, permitindo o cadastro de responsáveis, obras públicas e obras privadas, além de fornecer consultas para listar obras ordenadas pelo seu número, filtrar por tipo de obra e listar obras relacionadas a um responsável.
 
 ## ⚙️ Funcionalidades
-☑️✅
+☑️✅ TESTE
 
 ## Modelo Conceitual
 * Para a resolução desta API, foi montado um modelo conceitual DER, facilitando o entendimento do mesmo.
