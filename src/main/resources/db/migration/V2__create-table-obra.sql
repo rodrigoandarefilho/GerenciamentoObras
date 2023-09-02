@@ -1,6 +1,6 @@
 CREATE TABLE obra(
 
-    id BIGINT NOT NULL AUTO_INCREMENT,
+    id BINARY(16) NOT NULL,
 	descricao VARCHAR(255),
 	data_cadastro DATETIME,
 	data_inicio DATETIME,

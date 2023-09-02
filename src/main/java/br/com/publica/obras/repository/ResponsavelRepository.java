@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
-public interface ResponsavelRepository extends JpaRepository<Responsavel, BigDecimal> {
+public interface ResponsavelRepository extends JpaRepository<Responsavel, UUID> {
 
     @Query("""
             select r from Responsavel r

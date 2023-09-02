@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity(name = "Obra")
 @Table(name = "obra")
@@ -23,8 +24,8 @@ import java.util.List;
 public abstract class Obra {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigDecimal id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     @JsonFormat(pattern = "dd/MM/yyyy")
     @JoinColumn(name = "data_cadastro")
     private LocalDate dataCadastro;

@@ -17,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("obrapublica")
@@ -38,7 +39,7 @@ public class ObraPublicaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity buscarObraPrivadaPorID(@PathVariable BigDecimal id) {
+    public ResponseEntity buscarObraPrivadaPorID(@PathVariable UUID id) {
         var obraPublica = obraPublicaRepository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoObraPublica(obraPublica));
     }

@@ -1,8 +1,9 @@
 package br.com.publica.obras.domain.responsavel;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
-public record DadosDetalhamentoResponsavel(BigDecimal id, String nome, String cpf, BigDecimal codigo) {
+public record DadosDetalhamentoResponsavel(UUID id, String nome, String cpf, BigDecimal codigo) {
     public DadosDetalhamentoResponsavel (Responsavel responsavel){
         this(responsavel.getId(),
              responsavel.getNome(),

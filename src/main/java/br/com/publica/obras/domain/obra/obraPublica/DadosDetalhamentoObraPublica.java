@@ -5,8 +5,9 @@ import br.com.publica.obras.domain.responsavel.Responsavel;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
-public record DadosDetalhamentoObraPublica(BigDecimal id,
+public record DadosDetalhamentoObraPublica(UUID id,
                                            String descricao,
                                            LocalDate dataCadastro,
                                            LocalDate dataInicio,

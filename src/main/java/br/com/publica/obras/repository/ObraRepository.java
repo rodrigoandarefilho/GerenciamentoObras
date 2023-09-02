@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
-public interface ObraRepository extends JpaRepository<Obra, BigDecimal> {
+public interface ObraRepository extends JpaRepository<Obra, UUID> {
 
     @Query("""
             select DISTINCT o from Obra o LEFT JOIN FETCH o.responsaveis or WHERE or.codigo = :codigo

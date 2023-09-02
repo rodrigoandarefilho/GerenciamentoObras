@@ -4,6 +4,7 @@ import br.com.publica.obras.domain.obra.obraPrivada.ObraPrivada;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
-public interface ObraPrivadaRepository extends JpaRepository<ObraPrivada, BigDecimal> {
+public interface ObraPrivadaRepository extends JpaRepository<ObraPrivada, UUID> {
 }
