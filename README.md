@@ -18,22 +18,26 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 * [Flyway](https://flywaydb.org/)
 * [Lombok](https://projectlombok.org/)
 * [Swagger](https://swagger.io/)
+* [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 
 ## 📖 Modelo Conceitual DER
 Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3)
 
-## 📋 Pré-requisitos / Instalação
+## 📋 Pré-requisitos / Configuração
 Precisa ter instalado e configurado:
 
 * MySQL
 * Java
 * IntelliJ
-* 
-* Após ter instalado e configurado o MySQL, deverá criar um banco de dados chamado "gerenciamento_obras".
-Comando para criar o banco de dados: CREATE DATABASE 
 
+# Ajustes para o SGBD MySQL:
+DataBase: GERENCIAMENTO_OBRAS
+Plataform: postegres  
+porta: 3306  
+user: root  
+senha: 1234
 
 
 
