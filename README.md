@@ -32,12 +32,12 @@ Precisa ter instalado e configurado:
 * Java
 * IntelliJ
 
-# Ajustes para o SGBD MySQL:
-DataBase: GERENCIAMENTO_OBRAS
-Plataform: postegres  
-porta: 3306  
-user: root  
-senha: 1234
+### Ajustes para o SGBD MySQL:
+1. DataBase: GERENCIAMENTO_OBRAS
+2. Plataform: postegres  
+3. porta: 3306  
+4. user: root  
+5. senha: 1234
 
 
 
