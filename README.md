@@ -51,6 +51,7 @@ Primeira forma de executar o projeto:
 2. Na pasta em que clonou, navegue em "obras" > "target" e encontrará um arquivo chamado "obras-0.0.1-SNAPSHOT"
 3. Abra o terminal dentro da pasta "target" e realize o comando abaixo:
 java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://localhost/GERENCIAMENTO_OBRAS -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWORD=1234 -jar target/api-0.0.1-SNAPSHOT.jar
+
 ⚠️ CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
 * Substituir <endereco: porta>, <username> e <password>, pela sua configuração local !
 - [x] Pronto, problema resolvido, caso seu problema seja endereço, user ou senha diferente do recomendado.
