@@ -52,7 +52,7 @@ Primeira forma de executar o projeto:
 3. Abra o terminal dentro da pasta "target" e realize o comando abaixo:
 java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://localhost/GERENCIAMENTO_OBRAS -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWORD=1234 -jar target/api-0.0.1-SNAPSHOT.jar
 
-⚠️ CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
+⚠ CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
 * Substituir <endereco: porta>, <username> e <password>, pela sua configuração local !
 - [x] Pronto, problema resolvido, caso seu problema seja endereço, user ou senha diferente do recomendado.
 
@@ -61,7 +61,7 @@ Segunda forma de executar o projeto:
 1.2. Clique na seta "verde" e em seguida execute o projeto.
 
 ## Documentação da API
-A documentação da API foi realizada com o Swagger, desta forma ao executar a API acessar o link [SWAGGER](http://localhost:8080/swagger-ui/index.html#),
+A documentação da API foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
 tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/9546ae04-c5fd-4236-978a-f6b4c8b470e6)
