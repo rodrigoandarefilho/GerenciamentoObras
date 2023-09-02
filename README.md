@@ -13,7 +13,7 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 * Java 17
 * Spring Boot 3
 * Maven
-* MySQL
+* [MySQL](https://www.mysql.com/)
 * Hibernate
 * Flyway
 * Lombok
