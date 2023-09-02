@@ -33,8 +33,8 @@ Precisa ter instalado e configurado:
 * IntelliJ (versão: 2023.1.5)
 * Realizar o clone do repositório e de preferência deixar na pasta C: do computador
 
-#### É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
-⚠️ Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
+####⚠️ É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
+Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
 1. DataBase: GERENCIAMENTO_OBRAS
 2. porta: 3306  
 3. user: root  
