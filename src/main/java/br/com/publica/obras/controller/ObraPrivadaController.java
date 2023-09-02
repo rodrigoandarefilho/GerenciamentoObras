@@ -3,10 +3,10 @@ package br.com.publica.obras.controller;
 import br.com.publica.obras.domain.obra.obraPrivada.DadosCadastroObraPrivada;
 import br.com.publica.obras.domain.obra.obraPrivada.DadosDetalhamentoObraPrivada;
 import br.com.publica.obras.domain.obra.obraPrivada.ObraPrivada;
-import br.com.publica.obras.domain.responsavel.Responsavel;
-import br.com.publica.obras.infra.exception.ValidacaoException;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
 import br.com.publica.obras.repository.ResponsavelRepository;
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @RestController
+@Tag(name = "Cadastrar Obras Públicas")
 @RequestMapping("obraprivada")
 public class ObraPrivadaController {
 
@@ -27,33 +25,25 @@ public class ObraPrivadaController {
     private ObraPrivadaRepository obraPrivadaRepository;
     @Autowired
     private ResponsavelRepository responsavelRepository;
+    @Autowired
+    private ResponsavelController responsavelController;
 
     @PostMapping
     @Transactional
     public ResponseEntity<DadosDetalhamentoObraPrivada> cadastrarObraPrivada(@RequestBody @Valid DadosCadastroObraPrivada dadosCadastroObraPrivada,
                                                                              UriComponentsBuilder uriComponentsBuilder) {
         var obraPrivada = new ObraPrivada(dadosCadastroObraPrivada);
-        obraPrivadaRepository.save(validacaoResponsaveis(dadosCadastroObraPrivada, obraPrivada));
+        var listaDeCodigosResponsaveis = dadosCadastroObraPrivada.dadosObra().responsaveis();
+        obraPrivada.setResponsaveis(responsavelController.gerarListaCompletaDeResponsaveis(listaDeCodigosResponsaveis));
+        obraPrivadaRepository.save(obraPrivada);
         var uri = uriComponentsBuilder.path("/obraprivada/{id}").buildAndExpand(obraPrivada.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPrivada(obraPrivada));
     }
 
+    @Hidden
     @GetMapping("/{id}")
-    public ResponseEntity buscarObraPrivadaPorID(@PathVariable UUID id) {
+    public ResponseEntity buscarObraPrivadaPorNumero(@PathVariable UUID id) {
         var obraPrivada = obraPrivadaRepository.getReferenceById(id);
         return ResponseEntity.ok(new DadosDetalhamentoObraPrivada(obraPrivada));
-    }
-
-    private ObraPrivada validacaoResponsaveis(DadosCadastroObraPrivada dadosCadastroObraPrivada, ObraPrivada obraPrivada) {
-        List<Responsavel> listaDeResponsaveis = new ArrayList<>();
-        for (int i = 0; i < dadosCadastroObraPrivada.dadosObra().responsaveis().size(); i++) {
-            if (!responsavelRepository.existsByCodigo(dadosCadastroObraPrivada.dadosObra().responsaveis().get(i).getCodigo())) {
-                throw new ValidacaoException("O código "+ dadosCadastroObraPrivada.dadosObra().responsaveis().get(i).getCodigo() + " do responsável informado não existe");
-            }
-            var responsavel = responsavelRepository.findByCodigo(dadosCadastroObraPrivada.dadosObra().responsaveis().get(i).getCodigo());
-            listaDeResponsaveis.add(responsavel);
-        }
-        obraPrivada.setResponsaveis(listaDeResponsaveis);
-        return obraPrivada;
     }
 }

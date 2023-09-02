@@ -8,7 +8,7 @@ CREATE TABLE obra(
     zona VARCHAR(255),
     area_total BIGINT,
     dtype VARCHAR(255),
-    numero BIGINT NOT NULL,
+    numero BIGINT NOT NULL UNIQUE,
     tipo VARCHAR(255) NOT NULL,
 
 	PRIMARY KEY(id)

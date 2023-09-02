@@ -1,7 +1,7 @@
 CREATE TABLE responsavel(
 
     id BINARY(16) NOT NULL,
-    codigo BIGINT NOT NULL,
+    codigo BIGINT NOT NULL UNIQUE,
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) NOT NULL UNIQUE,
 
