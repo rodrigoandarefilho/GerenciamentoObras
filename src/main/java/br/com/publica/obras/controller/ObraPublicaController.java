@@ -25,7 +25,7 @@ public class ObraPublicaController {
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro da obra pública e retorna a mesma")
-    public ResponseEntity<ObraPublicaModel> cadastrarObraPublica(@RequestBody @Valid ObraPublicaDTO obraPublicaDTO,
+    public ResponseEntity cadastrarObraPublica(@RequestBody @Valid ObraPublicaDTO obraPublicaDTO,
                                                                  UriComponentsBuilder uriComponentsBuilder) {
         var obraPublica = obraPublicaService.cadastrarObraPublica(obraPublicaDTO);
         var uri = uriComponentsBuilder.path("/obrapublica/{id}").buildAndExpand(obraPublica.getId()).toUri();

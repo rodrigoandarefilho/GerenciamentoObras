@@ -1,6 +1,7 @@
 package br.com.publica.obras.domain.service;
 
-import br.com.publica.obras.domain.dto.ResponsavelDTO;
+import br.com.publica.obras.domain.dto.responsavel.CodigoResponsavelDTO;
+import br.com.publica.obras.domain.dto.responsavel.ResponsavelDTO;
 import br.com.publica.obras.domain.entity.ResponsavelEntity;
 import br.com.publica.obras.domain.model.ResponsavelModel;
 import br.com.publica.obras.infra.exception.ValidacaoException;
@@ -27,13 +28,13 @@ public class ResponsavelService {
         return new ResponsavelModel(responsavelRepository.getReferenceById(id));
     }
 
-    public List<ResponsavelEntity> gerarListaDeResponsaveis(List<ResponsavelEntity> listaDeCodigosResponsaveis) {
+    public List<ResponsavelEntity> gerarListaDeResponsaveis(List<CodigoResponsavelDTO> listaDeCodigosResponsaveis) {
         List<ResponsavelEntity> listaCompletaDeResponsaveis = new ArrayList<>();
         for (int i = 0; i < listaDeCodigosResponsaveis.size(); i++) {
-            if (!responsavelRepository.existsByCodigo(listaDeCodigosResponsaveis.get(i).getCodigo())) {
-                throw new ValidacaoException("O código "+ listaDeCodigosResponsaveis.get(i).getCodigo() + " do responsável informado não existe");
+            if (!responsavelRepository.existsByCodigo(listaDeCodigosResponsaveis.get(i).codigo())) {
+                throw new ValidacaoException("O código "+ listaDeCodigosResponsaveis.get(i).codigo() + " do responsável informado não existe");
             }
-            var responsavel = responsavelRepository.findByCodigo(listaDeCodigosResponsaveis.get(i).getCodigo());
+            var responsavel = responsavelRepository.findByCodigo(listaDeCodigosResponsaveis.get(i).codigo());
             listaCompletaDeResponsaveis.add(responsavel);
         }
         return listaCompletaDeResponsaveis;

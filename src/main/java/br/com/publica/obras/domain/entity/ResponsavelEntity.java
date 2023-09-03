@@ -1,6 +1,6 @@
 package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.dto.ResponsavelDTO;
+import br.com.publica.obras.domain.dto.responsavel.ResponsavelDTO;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "Responsavel")
+@Entity
 @Table(name = "responsavel")
 @Getter
 @AllArgsConstructor
@@ -28,7 +28,7 @@ public class ResponsavelEntity {
     private String cpf;
     @ManyToMany(mappedBy = "responsaveis",fetch = FetchType.LAZY)
     @JsonBackReference
-    private List<ObraEntity> obraEntities = new ArrayList<>();
+    private List<ObraEntity> obras = new ArrayList<>();
     private BigDecimal codigo;
 
     public ResponsavelEntity(ResponsavelDTO responsavelDTO) {

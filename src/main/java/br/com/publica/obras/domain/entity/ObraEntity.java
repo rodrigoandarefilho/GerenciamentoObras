@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "Obra")
+@Entity
 @Table(name = "obra")
 @Getter
 @Setter
@@ -21,7 +21,7 @@ import java.util.UUID;
 @EqualsAndHashCode(of = "id")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "tipo")
-public abstract class ObraEntity {
+public class ObraEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -42,7 +42,6 @@ public abstract class ObraEntity {
     public ObraEntity(ObraDTO obraDTO) {
         this.descricao = obraDTO.descricao();
         this.dataCadastro = LocalDate.now();
-        this.responsaveis = obraDTO.responsaveis();
         this.numero = obraDTO.numero();
     }
 }

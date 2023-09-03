@@ -1,6 +1,6 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.dto.ResponsavelDTO;
+import br.com.publica.obras.domain.dto.responsavel.ResponsavelDTO;
 import br.com.publica.obras.domain.model.ResponsavelModel;
 import br.com.publica.obras.domain.service.ResponsavelService;
 import io.swagger.v3.oas.annotations.Hidden;

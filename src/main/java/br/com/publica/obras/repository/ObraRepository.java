@@ -11,7 +11,7 @@ import java.util.UUID;
 public interface ObraRepository extends JpaRepository<ObraEntity, UUID> {
 
     @Query("""
-            select DISTINCT o from Obra o LEFT JOIN FETCH o.responsaveis or WHERE or.codigo = :codigo
+            select DISTINCT o from ObraEntity o LEFT JOIN FETCH o.responsaveis or WHERE or.codigo = :codigo
             """)
     List<ObraEntity> findAllObrasPorResponsavel(BigDecimal codigo);
 }

@@ -1,6 +1,6 @@
 package br.com.publica.obras.domain.dto;
 
-import br.com.publica.obras.domain.entity.ResponsavelEntity;
+import br.com.publica.obras.domain.dto.responsavel.CodigoResponsavelDTO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +11,7 @@ public record ObraDTO(
         @NotBlank(message = "{descricao.obrigatorio}")
         String descricao,
         @NotNull(message = "{responsavel.obrigatorio}")
-        List<ResponsavelEntity> responsaveis,
+        List<CodigoResponsavelDTO> responsaveis,
         @NotNull(message = "{numero_obra.obrigatorio}")
         BigDecimal numero) {
 }

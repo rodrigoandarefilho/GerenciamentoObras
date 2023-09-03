@@ -1,5 +1,6 @@
 package br.com.publica.obras.domain.dto;
 
+import br.com.publica.obras.domain.entity.ObraEntity;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
@@ -7,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public record ObraPublicaDTO(
-
         @NotNull @Valid
         ObraDTO dadosObra,
         @NotNull(message = "{data_inicio.obrigatorio}")
