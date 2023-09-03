@@ -6,9 +6,9 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
-public record DadosCadastroObraPrivada(
+public record ObraPrivadaDTO(
         @NotNull @Valid
-        DadosObra dadosObra,
+        ObraDTO dadosObra,
         @NotBlank(message = "{zona.obrigatorio}")
         String zona,
         @NotNull(message = "{area_total.obrigatorio}")

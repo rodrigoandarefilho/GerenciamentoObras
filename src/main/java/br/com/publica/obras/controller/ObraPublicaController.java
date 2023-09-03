@@ -1,11 +1,8 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.dto.DadosCadastroObraPublica;
-import br.com.publica.obras.domain.model.DadosDetalhamentoObraPublica;
-import br.com.publica.obras.domain.entity.ObraPublica;
+import br.com.publica.obras.domain.dto.ObraPublicaDTO;
+import br.com.publica.obras.domain.model.ObraPublicaModel;
 import br.com.publica.obras.domain.service.ObraPublicaService;
-import br.com.publica.obras.domain.service.ResponsavelService;
-import br.com.publica.obras.repository.ObraPublicaRepository;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -28,11 +25,11 @@ public class ObraPublicaController {
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro da obra pública e retorna a mesma")
-    public ResponseEntity<DadosDetalhamentoObraPublica> cadastrarObraPublica(@RequestBody @Valid DadosCadastroObraPublica dadosCadastroObraPublica,
-                                                                             UriComponentsBuilder uriComponentsBuilder) {
-        var obraPublica = obraPublicaService.cadastrarObraPublica(dadosCadastroObraPublica);
+    public ResponseEntity<ObraPublicaModel> cadastrarObraPublica(@RequestBody @Valid ObraPublicaDTO obraPublicaDTO,
+                                                                 UriComponentsBuilder uriComponentsBuilder) {
+        var obraPublica = obraPublicaService.cadastrarObraPublica(obraPublicaDTO);
         var uri = uriComponentsBuilder.path("/obrapublica/{id}").buildAndExpand(obraPublica.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPublica(obraPublica));
+        return ResponseEntity.created(uri).body(new ObraPublicaModel(obraPublica));
     }
 
     @Hidden

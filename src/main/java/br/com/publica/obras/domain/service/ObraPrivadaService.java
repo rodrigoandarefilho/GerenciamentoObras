@@ -1,8 +1,8 @@
 package br.com.publica.obras.domain.service;
 
-import br.com.publica.obras.domain.dto.DadosCadastroObraPrivada;
-import br.com.publica.obras.domain.entity.ObraPrivada;
-import br.com.publica.obras.domain.model.DadosDetalhamentoObraPrivada;
+import br.com.publica.obras.domain.dto.ObraPrivadaDTO;
+import br.com.publica.obras.domain.entity.ObraPrivadaEntity;
+import br.com.publica.obras.domain.model.ObraPrivadaModel;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,14 +17,14 @@ public class ObraPrivadaService {
     @Autowired
     private ResponsavelService responsavelService;
 
-    public ObraPrivada cadastrarObraPrivada(DadosCadastroObraPrivada dadosCadastroObraPrivada) {
-        var obraPrivada = new ObraPrivada(dadosCadastroObraPrivada);
+    public ObraPrivadaEntity cadastrarObraPrivada(ObraPrivadaDTO obraPrivadaDTO) {
+        var obraPrivada = new ObraPrivadaEntity(obraPrivadaDTO);
 
-        var listaDeCodigosResponsaveis = dadosCadastroObraPrivada.dadosObra().responsaveis();
+        var listaDeCodigosResponsaveis = obraPrivadaDTO.dadosObra().responsaveis();
         obraPrivada.setResponsaveis(responsavelService.gerarListaDeResponsaveis(listaDeCodigosResponsaveis));
         return obraPrivadaRepository.save(obraPrivada);
     }
-    public DadosDetalhamentoObraPrivada buscarObraPrivadaPorNumero(UUID id) {
-        return new DadosDetalhamentoObraPrivada(obraPrivadaRepository.getReferenceById(id));
+    public ObraPrivadaModel buscarObraPrivadaPorNumero(UUID id) {
+        return new ObraPrivadaModel(obraPrivadaRepository.getReferenceById(id));
     }
 }

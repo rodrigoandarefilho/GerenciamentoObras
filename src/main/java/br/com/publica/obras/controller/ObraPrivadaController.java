@@ -1,7 +1,7 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.dto.DadosCadastroObraPrivada;
-import br.com.publica.obras.domain.model.DadosDetalhamentoObraPrivada;
+import br.com.publica.obras.domain.dto.ObraPrivadaDTO;
+import br.com.publica.obras.domain.model.ObraPrivadaModel;
 import br.com.publica.obras.domain.service.ObraPrivadaService;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,11 +26,11 @@ public class ObraPrivadaController {
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro da obra privada e retorna a mesma")
-    public ResponseEntity<DadosDetalhamentoObraPrivada> cadastrarObraPrivada(@RequestBody @Valid DadosCadastroObraPrivada dadosCadastroObraPrivada,
-                                                                             UriComponentsBuilder uriComponentsBuilder) {
-        var obraPrivada = obraPrivadaService.cadastrarObraPrivada(dadosCadastroObraPrivada);
+    public ResponseEntity<ObraPrivadaModel> cadastrarObraPrivada(@RequestBody @Valid ObraPrivadaDTO obraPrivadaDTO,
+                                                                 UriComponentsBuilder uriComponentsBuilder) {
+        var obraPrivada = obraPrivadaService.cadastrarObraPrivada(obraPrivadaDTO);
         var uri = uriComponentsBuilder.path("/obraprivada/{id}").buildAndExpand(obraPrivada.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPrivada(obraPrivada));
+        return ResponseEntity.created(uri).body(new ObraPrivadaModel(obraPrivada));
     }
 
     @Hidden

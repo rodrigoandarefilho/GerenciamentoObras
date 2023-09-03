@@ -1,6 +1,6 @@
 package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.dto.DadosObra;
+import br.com.publica.obras.domain.dto.ObraDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @EqualsAndHashCode(of = "id")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "tipo")
-public abstract class Obra {
+public abstract class ObraEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -37,12 +37,12 @@ public abstract class Obra {
             joinColumns = @JoinColumn(name = "obra_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "responsavel_id", referencedColumnName = "id"))
     @JsonManagedReference
-    private List<Responsavel> responsaveis = new ArrayList<>();
+    private List<ResponsavelEntity> responsaveis = new ArrayList<>();
 
-    public Obra(DadosObra dadosObra) {
-        this.descricao = dadosObra.descricao();
+    public ObraEntity(ObraDTO obraDTO) {
+        this.descricao = obraDTO.descricao();
         this.dataCadastro = LocalDate.now();
-        this.responsaveis = dadosObra.responsaveis();
-        this.numero = dadosObra.numero();
+        this.responsaveis = obraDTO.responsaveis();
+        this.numero = obraDTO.numero();
     }
 }

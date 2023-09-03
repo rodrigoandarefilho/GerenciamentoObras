@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
 
-public record DadosCadastroResponsavel(
+public record ResponsavelDTO(
         @NotNull(message = "{codigo.obrigatorio}")
         BigDecimal codigo,
         @NotBlank(message = "{nome.obrigatorio}")

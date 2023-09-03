@@ -6,10 +6,10 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
-public record DadosCadastroObraPublica(
+public record ObraPublicaDTO(
 
         @NotNull @Valid
-        DadosObra dadosObra,
+        ObraDTO dadosObra,
         @NotNull(message = "{data_inicio.obrigatorio}")
         @Future
         LocalDate dataInicio,

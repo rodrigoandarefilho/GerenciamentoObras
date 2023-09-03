@@ -1,9 +1,9 @@
 package br.com.publica.obras.repository;
 
-import br.com.publica.obras.domain.entity.ObraPublica;
+import br.com.publica.obras.domain.entity.ObraPublicaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface ObraPublicaRepository extends JpaRepository<ObraPublica, UUID> {
+public interface ObraPublicaRepository extends JpaRepository<ObraPublicaEntity, UUID> {
 }

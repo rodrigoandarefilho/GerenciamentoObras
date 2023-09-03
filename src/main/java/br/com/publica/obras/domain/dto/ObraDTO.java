@@ -1,17 +1,17 @@
 package br.com.publica.obras.domain.dto;
 
-import br.com.publica.obras.domain.entity.Responsavel;
+import br.com.publica.obras.domain.entity.ResponsavelEntity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public record DadosObra(
+public record ObraDTO(
         @NotBlank(message = "{descricao.obrigatorio}")
         String descricao,
         @NotNull(message = "{responsavel.obrigatorio}")
-        List<Responsavel> responsaveis,
+        List<ResponsavelEntity> responsaveis,
         @NotNull(message = "{numero_obra.obrigatorio}")
         BigDecimal numero) {
 }

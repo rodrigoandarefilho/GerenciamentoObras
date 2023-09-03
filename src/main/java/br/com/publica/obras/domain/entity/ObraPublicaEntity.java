@@ -1,6 +1,6 @@
 package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.dto.DadosCadastroObraPublica;
+import br.com.publica.obras.domain.dto.ObraPublicaDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @DiscriminatorValue("publica")
-public class ObraPublica extends Obra {
+public class ObraPublicaEntity extends ObraEntity {
 
     @JoinColumn(name = "data_inicio")
     @JsonFormat(pattern = "dd/MM/yyyy")
@@ -26,9 +26,9 @@ public class ObraPublica extends Obra {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFim;
 
-    public ObraPublica(DadosCadastroObraPublica dadosCadastroObraPublica) {
-        super(dadosCadastroObraPublica.dadosObra());
-        this.dataInicio = dadosCadastroObraPublica.dataInicio();
-        this.dataFim = dadosCadastroObraPublica.dataFim();
+    public ObraPublicaEntity(ObraPublicaDTO obraPublicaDTO) {
+        super(obraPublicaDTO.dadosObra());
+        this.dataInicio = obraPublicaDTO.dataInicio();
+        this.dataFim = obraPublicaDTO.dataFim();
     }
 }

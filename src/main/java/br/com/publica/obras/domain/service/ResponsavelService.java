@@ -1,8 +1,8 @@
 package br.com.publica.obras.domain.service;
 
-import br.com.publica.obras.domain.dto.DadosCadastroResponsavel;
-import br.com.publica.obras.domain.entity.Responsavel;
-import br.com.publica.obras.domain.model.DadosDetalhamentoResponsavel;
+import br.com.publica.obras.domain.dto.ResponsavelDTO;
+import br.com.publica.obras.domain.entity.ResponsavelEntity;
+import br.com.publica.obras.domain.model.ResponsavelModel;
 import br.com.publica.obras.infra.exception.ValidacaoException;
 import br.com.publica.obras.repository.ResponsavelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +18,17 @@ public class ResponsavelService {
     @Autowired
     private ResponsavelRepository responsavelRepository;
 
-    public Responsavel cadastrarResponsavel(DadosCadastroResponsavel dadosCadastroResponsavel) {
-        var responsavel = new Responsavel(dadosCadastroResponsavel);
+    public ResponsavelEntity cadastrarResponsavel(ResponsavelDTO responsavelDTO) {
+        var responsavel = new ResponsavelEntity(responsavelDTO);
         return responsavelRepository.save(responsavel);
     }
 
-    public DadosDetalhamentoResponsavel buscarResponsavelPorId(UUID id) {
-        return new DadosDetalhamentoResponsavel(responsavelRepository.getReferenceById(id));
+    public ResponsavelModel buscarResponsavelPorId(UUID id) {
+        return new ResponsavelModel(responsavelRepository.getReferenceById(id));
     }
 
-    public List<Responsavel> gerarListaDeResponsaveis(List<Responsavel> listaDeCodigosResponsaveis) {
-        List<Responsavel> listaCompletaDeResponsaveis = new ArrayList<>();
+    public List<ResponsavelEntity> gerarListaDeResponsaveis(List<ResponsavelEntity> listaDeCodigosResponsaveis) {
+        List<ResponsavelEntity> listaCompletaDeResponsaveis = new ArrayList<>();
         for (int i = 0; i < listaDeCodigosResponsaveis.size(); i++) {
             if (!responsavelRepository.existsByCodigo(listaDeCodigosResponsaveis.get(i).getCodigo())) {
                 throw new ValidacaoException("O código "+ listaDeCodigosResponsaveis.get(i).getCodigo() + " do responsável informado não existe");

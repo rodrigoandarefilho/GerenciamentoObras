@@ -1,7 +1,7 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.dto.DadosCadastroResponsavel;
-import br.com.publica.obras.domain.model.DadosDetalhamentoResponsavel;
+import br.com.publica.obras.domain.dto.ResponsavelDTO;
+import br.com.publica.obras.domain.model.ResponsavelModel;
 import br.com.publica.obras.domain.service.ResponsavelService;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,10 +26,10 @@ public class ResponsavelController {
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro do responsável e retorna o mesmo")
-    public ResponseEntity cadastrarResponsavel(@RequestBody @Valid DadosCadastroResponsavel dadosCadastroResponsavel, UriComponentsBuilder uriComponentsBuilder) {
-        var responsavel = responsavelService.cadastrarResponsavel(dadosCadastroResponsavel);
+    public ResponseEntity cadastrarResponsavel(@RequestBody @Valid ResponsavelDTO responsavelDTO, UriComponentsBuilder uriComponentsBuilder) {
+        var responsavel = responsavelService.cadastrarResponsavel(responsavelDTO);
         var uri = uriComponentsBuilder.path("/responsavel/{id}").buildAndExpand(responsavel.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoResponsavel(responsavel));
+        return ResponseEntity.created(uri).body(new ResponsavelModel(responsavel));
     }
 
     @Hidden
