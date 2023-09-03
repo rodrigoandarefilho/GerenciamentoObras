@@ -1,6 +1,6 @@
 package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.constantes.TipoDeZona;
+import br.com.publica.obras.utils.constantes.TipoDeZona;
 import br.com.publica.obras.domain.dto.ObraPrivadaDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

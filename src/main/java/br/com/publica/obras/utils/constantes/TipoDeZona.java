@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.constantes;
+package br.com.publica.obras.utils.constantes;
 
 public enum TipoDeZona {
     RURAL,
