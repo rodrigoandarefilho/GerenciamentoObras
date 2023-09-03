@@ -32,7 +32,7 @@ public class ResponsavelService {
         List<ResponsavelEntity> listaCompletaDeResponsaveis = new ArrayList<>();
         for (int i = 0; i < listaDeCodigosResponsaveis.size(); i++) {
             if (!responsavelRepository.existsByCodigo(listaDeCodigosResponsaveis.get(i).codigo())) {
-                throw new ValidacaoException("O código "+ listaDeCodigosResponsaveis.get(i).codigo() + " do responsável informado não existe");
+                throw new ValidacaoException("Não tem nenhum responsável cadastrado com o código " + listaDeCodigosResponsaveis.get(i).codigo());
             }
             var responsavel = responsavelRepository.findByCodigo(listaDeCodigosResponsaveis.get(i).codigo());
             listaCompletaDeResponsaveis.add(responsavel);
