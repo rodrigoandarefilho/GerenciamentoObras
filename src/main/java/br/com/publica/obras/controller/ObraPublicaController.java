@@ -1,8 +1,8 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.obra.obraPublica.DadosCadastroObraPublica;
-import br.com.publica.obras.domain.obra.obraPublica.DadosDetalhamentoObraPublica;
-import br.com.publica.obras.domain.obra.obraPublica.ObraPublica;
+import br.com.publica.obras.domain.obraPublica.DadosCadastroObraPublica;
+import br.com.publica.obras.domain.obraPublica.DadosDetalhamentoObraPublica;
+import br.com.publica.obras.domain.obraPublica.ObraPublica;
 import br.com.publica.obras.repository.ObraPublicaRepository;
 import br.com.publica.obras.repository.ResponsavelRepository;
 import io.swagger.v3.oas.annotations.Hidden;

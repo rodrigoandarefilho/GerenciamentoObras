@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.obra.obraPrivada;
+package br.com.publica.obras.domain.obraPrivada;
 
 import br.com.publica.obras.domain.obra.DadosObra;
 import jakarta.validation.Valid;

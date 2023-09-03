@@ -1,8 +1,8 @@
 package br.com.publica.obras.controller;
 
 import br.com.publica.obras.domain.obra.DadosDetalhamentoObra;
-import br.com.publica.obras.domain.obra.obraPrivada.DadosDetalhamentoObraPrivada;
-import br.com.publica.obras.domain.obra.obraPublica.DadosDetalhamentoObraPublica;
+import br.com.publica.obras.domain.obraPrivada.DadosDetalhamentoObraPrivada;
+import br.com.publica.obras.domain.obraPublica.DadosDetalhamentoObraPublica;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
 import br.com.publica.obras.repository.ObraPublicaRepository;
 import br.com.publica.obras.repository.ObraRepository;
@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("obras")
-@Tag(name = "Consulta por Obras")
+@Tag(name = "Consultar Obras")
 public class ObraController {
 
     @Autowired

@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.obra.obraPublica;
+package br.com.publica.obras.domain.obraPublica;
 
 import br.com.publica.obras.domain.responsavel.Responsavel;
 
