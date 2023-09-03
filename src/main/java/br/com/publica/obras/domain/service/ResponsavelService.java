@@ -20,8 +20,7 @@ public class ResponsavelService {
 
     public Responsavel cadastrarResponsavel(DadosCadastroResponsavel dadosCadastroResponsavel) {
         var responsavel = new Responsavel(dadosCadastroResponsavel);
-        responsavelRepository.save(responsavel);
-        return responsavel;
+        return responsavelRepository.save(responsavel);
     }
 
     public DadosDetalhamentoResponsavel buscarResponsavelPorId(UUID id) {

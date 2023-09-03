@@ -22,8 +22,7 @@ public class ObraPrivadaService {
 
         var listaDeCodigosResponsaveis = dadosCadastroObraPrivada.dadosObra().responsaveis();
         obraPrivada.setResponsaveis(responsavelService.gerarListaDeResponsaveis(listaDeCodigosResponsaveis));
-        obraPrivadaRepository.save(obraPrivada);
-        return obraPrivada;
+        return obraPrivadaRepository.save(obraPrivada);
     }
     public DadosDetalhamentoObraPrivada buscarObraPrivadaPorNumero(UUID id) {
         return new DadosDetalhamentoObraPrivada(obraPrivadaRepository.getReferenceById(id));
