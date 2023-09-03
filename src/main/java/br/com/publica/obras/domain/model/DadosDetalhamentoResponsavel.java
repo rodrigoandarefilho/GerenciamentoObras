@@ -1,4 +1,6 @@
-package br.com.publica.obras.domain.responsavel;
+package br.com.publica.obras.domain.model;
+
+import br.com.publica.obras.domain.entity.Responsavel;
 
 import java.math.BigDecimal;
 import java.util.UUID;

@@ -1,6 +1,6 @@
 package br.com.publica.obras.repository;
 
-import br.com.publica.obras.domain.obra.Obra;
+import br.com.publica.obras.domain.entity.Obra;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

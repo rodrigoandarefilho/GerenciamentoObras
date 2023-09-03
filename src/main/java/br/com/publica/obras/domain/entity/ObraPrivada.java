@@ -1,7 +1,7 @@
-package br.com.publica.obras.domain.obraPrivada;
+package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.obra.Obra;
 import br.com.publica.obras.domain.constantes.TipoDeZona;
+import br.com.publica.obras.domain.dto.DadosCadastroObraPrivada;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

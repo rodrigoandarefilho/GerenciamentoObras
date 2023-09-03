@@ -1,6 +1,6 @@
-package br.com.publica.obras.domain.obra;
+package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.responsavel.Responsavel;
+import br.com.publica.obras.domain.dto.DadosObra;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

@@ -1,6 +1,5 @@
-package br.com.publica.obras.domain.obraPrivada;
+package br.com.publica.obras.domain.dto;
 
-import br.com.publica.obras.domain.obra.DadosObra;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

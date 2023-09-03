@@ -1,6 +1,6 @@
 package br.com.publica.obras.repository;
 
-import br.com.publica.obras.domain.obraPrivada.ObraPrivada;
+import br.com.publica.obras.domain.entity.ObraPrivada;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

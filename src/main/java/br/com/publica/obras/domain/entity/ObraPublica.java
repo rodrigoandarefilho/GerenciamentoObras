@@ -1,6 +1,6 @@
-package br.com.publica.obras.domain.obraPublica;
+package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.obra.Obra;
+import br.com.publica.obras.domain.dto.DadosCadastroObraPublica;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;

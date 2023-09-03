@@ -1,6 +1,7 @@
-package br.com.publica.obras.domain.obraPublica;
+package br.com.publica.obras.domain.model;
 
-import br.com.publica.obras.domain.responsavel.Responsavel;
+import br.com.publica.obras.domain.entity.ObraPublica;
+import br.com.publica.obras.domain.entity.Responsavel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

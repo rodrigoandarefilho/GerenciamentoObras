@@ -1,8 +1,9 @@
 package br.com.publica.obras.controller;
 
-import br.com.publica.obras.domain.obraPublica.DadosCadastroObraPublica;
-import br.com.publica.obras.domain.obraPublica.DadosDetalhamentoObraPublica;
-import br.com.publica.obras.domain.obraPublica.ObraPublica;
+import br.com.publica.obras.domain.dto.DadosCadastroObraPublica;
+import br.com.publica.obras.domain.model.DadosDetalhamentoObraPublica;
+import br.com.publica.obras.domain.entity.ObraPublica;
+import br.com.publica.obras.domain.service.ResponsavelService;
 import br.com.publica.obras.repository.ObraPublicaRepository;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,7 +25,7 @@ public class ObraPublicaController {
     @Autowired
     private ObraPublicaRepository obraPublicaRepository;
     @Autowired
-    private ResponsavelController responsavelController;
+    private ResponsavelService responsavelService;
 
     @PostMapping
     @Transactional
@@ -33,7 +34,7 @@ public class ObraPublicaController {
                                                                              UriComponentsBuilder uriComponentsBuilder) {
         var obraPublica = new ObraPublica(dadosCadastroObraPublica);
         var listaDeCodigosResponsaveis = dadosCadastroObraPublica.dadosObra().responsaveis();
-        obraPublica.setResponsaveis(responsavelController.gerarListaCompletaDeResponsaveis(listaDeCodigosResponsaveis));
+        obraPublica.setResponsaveis(responsavelService.gerarListaDeResponsaveis(listaDeCodigosResponsaveis));
         obraPublicaRepository.save(obraPublica);
         var uri = uriComponentsBuilder.path("/obrapublica/{id}").buildAndExpand(obraPublica.getId()).toUri();
         return ResponseEntity.created(uri).body(new DadosDetalhamentoObraPublica(obraPublica));

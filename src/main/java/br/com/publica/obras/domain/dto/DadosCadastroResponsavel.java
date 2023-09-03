@@ -1,4 +1,4 @@
-package br.com.publica.obras.domain.responsavel;
+package br.com.publica.obras.domain.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

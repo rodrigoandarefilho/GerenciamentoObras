@@ -1,6 +1,6 @@
-package br.com.publica.obras.domain.responsavel;
+package br.com.publica.obras.domain.entity;
 
-import br.com.publica.obras.domain.obra.Obra;
+import br.com.publica.obras.domain.dto.DadosCadastroResponsavel;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

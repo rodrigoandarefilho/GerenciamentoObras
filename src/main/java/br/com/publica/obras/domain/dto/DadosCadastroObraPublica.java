@@ -1,11 +1,9 @@
-package br.com.publica.obras.domain.obraPublica;
+package br.com.publica.obras.domain.dto;
 
-import br.com.publica.obras.domain.obra.DadosObra;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record DadosCadastroObraPublica(
