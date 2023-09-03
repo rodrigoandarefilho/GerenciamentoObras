@@ -27,18 +27,38 @@ public class ObraService {
     @Autowired
     private ResponsavelRepository responsavelRepository;
 
+    /**
+     *@param paginacao Recebe um atributo do tipo Pageable que costuma ser útil
+     *quando temos um conjunto de dados grande e queremos apresentá-lo ao usuário em partes menores.
+     *@return Retorna uma lista com todas as obras cadastradas
+     */
     public List<ObraModel> buscarTodasObras(Pageable paginacao) {
         return obraRepository.findAll(paginacao).stream().map(ObraModel::new).toList();
     }
 
+    /**
+     *@param paginacao Recebe um atributo do tipo Pageable que costuma ser útil
+     *quando temos um conjunto de dados grande e queremos apresentá-lo ao usuário em partes menores.
+     *@return Retorna uma lista com todas as obras publicas cadastradas
+     */
     public List<ObraPublicaModel> buscarTodasObrasPublicas(Pageable paginacao) {
         return obraPublicaRepository.findAll(paginacao).stream().map(ObraPublicaModel::new).toList();
     }
 
+    /**
+     *@param paginacao Recebe um atributo do tipo Pageable que costuma ser útil
+     *quando temos um conjunto de dados grande e queremos apresentá-lo ao usuário em partes menores.
+     *@return Retorna uma lista com todas as obras prrivadas cadastradas
+     */
     public List<ObraPrivadaModel> buscarTodasObrasPrivadas(Pageable paginacao) {
         return obraPrivadaRepository.findAll(paginacao).stream().map(ObraPrivadaModel::new).toList();
     }
 
+    /**
+     *@param codigoDoResponsavel Recebe um responsável
+     *@return Verifica se existe no bando o codigo do responsável e
+     *retorna uma lista de Obras referente ao codigo do responsavel
+     */
     public List<ObraModel> buscarObrasPorResponsavel(BigDecimal codigoDoResponsavel) {
         if(!responsavelRepository.existsByCodigo(codigoDoResponsavel)) {
             throw new ValidacaoException("Não tem nenhum responsável cadastrado com o código " + codigoDoResponsavel);

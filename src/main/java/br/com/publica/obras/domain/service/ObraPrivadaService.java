@@ -17,6 +17,10 @@ public class ObraPrivadaService {
     @Autowired
     private ResponsavelService responsavelService;
 
+    /**
+     *@param obraPrivadaDTO Recebe um objeto do tipo obra privada, contendo os codigos dos responsaveis
+     *@return Salva no banco a obra privada e envia para controller o mesmo
+     */
     public ObraPrivadaEntity cadastrarObraPrivada(ObraPrivadaDTO obraPrivadaDTO) {
         var obraPrivada = new ObraPrivadaEntity(obraPrivadaDTO);
 
@@ -24,7 +28,12 @@ public class ObraPrivadaService {
         obraPrivada.setResponsaveis(responsavelService.gerarListaDeResponsaveis(listaDeCodigosResponsaveis));
         return obraPrivadaRepository.save(obraPrivada);
     }
-    public ObraPrivadaModel buscarObraPrivadaPorNumero(UUID id) {
+
+    /**
+     *@param id Recebe o ID de obra privada
+     *@return Realiza uma consulta no banco e retorna a obra privada filtrada pelo ID
+     */
+    public ObraPrivadaModel buscarObraPrivadaPorId(UUID id) {
         return new ObraPrivadaModel(obraPrivadaRepository.getReferenceById(id));
     }
 }

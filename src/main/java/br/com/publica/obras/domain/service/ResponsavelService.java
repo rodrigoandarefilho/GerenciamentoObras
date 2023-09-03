@@ -19,15 +19,27 @@ public class ResponsavelService {
     @Autowired
     private ResponsavelRepository responsavelRepository;
 
+    /**
+     *@param responsavelDTO Recebe um objeto do tipo responsável
+     *@return Salva no banco o responsável e envia para controller o mesmo
+     */
     public ResponsavelEntity cadastrarResponsavel(ResponsavelDTO responsavelDTO) {
         var responsavel = new ResponsavelEntity(responsavelDTO);
         return responsavelRepository.save(responsavel);
     }
 
+    /**
+     *@param id Recebe o ID do responsável
+     *@return Realiza uma consulta no banco e retorna o responsável pelo ID
+     */
     public ResponsavelModel buscarResponsavelPorId(UUID id) {
         return new ResponsavelModel(responsavelRepository.getReferenceById(id));
     }
 
+    /**
+     *@param listaDeCodigosResponsaveis Recebe uma lista de codigos de responsaveis
+     *@return Retorna uma lista de responsáveis (objeto)
+     */
     public List<ResponsavelEntity> gerarListaDeResponsaveis(List<CodigoResponsavelDTO> listaDeCodigosResponsaveis) {
         List<ResponsavelEntity> listaCompletaDeResponsaveis = new ArrayList<>();
         for (int i = 0; i < listaDeCodigosResponsaveis.size(); i++) {

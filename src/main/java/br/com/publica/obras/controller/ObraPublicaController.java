@@ -22,6 +22,13 @@ public class ObraPublicaController {
     @Autowired
     private ObraPublicaService obraPublicaService;
 
+    /**
+     *@param obraPublicaDTO Recebe um objeto do tipo Obra Publica
+     *@param uriComponentsBuilder Recebe uma FactoryClass para obter instâncias de UriComponents, que são úteis para
+     *construir URIs.
+     *@return Retorna um ResponseEntity do tipo created e como tem a URI montada, realiza a busca pela obra publica
+     * por ID e retorna o mesmo para o usuário
+     */
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro da obra pública e retorna a mesma")
@@ -32,9 +39,13 @@ public class ObraPublicaController {
         return ResponseEntity.created(uri).body(new ObraPublicaModel(obraPublica));
     }
 
+    /**
+     *@param id É o id da obra publica
+     *@return Realiza a busca pela obra publica por id e retorna a mesma para o usuário.
+     */
     @Hidden
     @GetMapping("/{id}")
     public ResponseEntity buscarObraPrivadaPorID(@PathVariable UUID id) {
-        return ResponseEntity.ok(obraPublicaService.buscarObraPrivadaPorID(id));
+        return ResponseEntity.ok(obraPublicaService.buscarObraPublicaPorID(id));
     }
 }

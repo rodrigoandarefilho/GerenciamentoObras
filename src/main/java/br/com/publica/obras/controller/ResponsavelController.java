@@ -23,6 +23,13 @@ public class ResponsavelController {
     @Autowired
     private ResponsavelService responsavelService;
 
+    /**
+     *@param responsavelDTO Recebe um objeto do tipo responsavel
+     *@param uriComponentsBuilder Recebe uma FactoryClass para obter instâncias de UriComponents, que são úteis para
+     *construir URIs.
+     *@return Retorna um ResponseEntity do tipo created e como tem a URI montada, realiza a busca pelo responsavel
+     * por ID e retorna o mesmo para o usuário
+     */
     @PostMapping
     @Transactional
     @Operation(summary = "Realiza o cadastro do responsável e retorna o mesmo")
@@ -32,6 +39,10 @@ public class ResponsavelController {
         return ResponseEntity.created(uri).body(new ResponsavelModel(responsavel));
     }
 
+    /**
+     *@param id Recebe um id do responsavel
+     *@return Retorna um ResponseEntity do tipo ok e envia o usuário encontrado no corpo do retorno da requisição
+     */
     @Hidden
     @GetMapping("/{id}")
     public ResponseEntity buscarResponsavelPorId(@PathVariable UUID id) {
