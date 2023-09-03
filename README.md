@@ -41,7 +41,7 @@ Precisa ter instalado e configurado:
 > 3. user: root  
 > 4. senha: 1234
 
-## 📋 Execução da API
+## 💻 Execução da API
 #### Após ter realizado download, instalado e configurado os pré-requisitos realize os seguintes passos para executar a API:
 1. Ao abrir o IntelliJ e abrir o projeto no mesmo, podemos realizar de duas maneiras a execução do projeto (Figura abaixo)
 
@@ -65,12 +65,18 @@ Segunda forma de executar o projeto:</br>
 1.1. Na lateral esquerda abra as seguintes abas "src" > "main" > "java" > "br.com.publica.obras"
 1.2. Clique na seta "verde" e em seguida execute o projeto.
 
-## Documentação da API
+## 📃 Documentação da API
 Foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
 tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/9546ae04-c5fd-4236-978a-f6b4c8b470e6)
 
+> **Note**
+> Também estou disponibilizando arquivos exportados do Insomnia, com testes de requisições.</br>
+> Facilitando o entendimento do mesmo.
+
+## ✒️ Autor
+#### Rodrigo Andare Filho
 
 
 
