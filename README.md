@@ -35,12 +35,13 @@ Precisa ter instalado e configurado:
 * Realizar o clone do repositório e de preferência deixar na pasta C: do computador
 
 > **Important**
-> : É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
+> É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
 > Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
 > 1. DataBase: GERENCIAMENTO_OBRAS
 > 2. porta: 3306  
 > 3. user: root  
 > 4. senha: 1234
+> Caso ja tenha instalado o mesmo, em seguida informo como utilizar seus dados no SGBD MySQL.
 
 ## 💻 Execução da API
 #### Após ter realizado download, instalado e configurado os pré-requisitos realize os seguintes passos para executar a API:
