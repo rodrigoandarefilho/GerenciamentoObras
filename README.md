@@ -19,6 +19,7 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 * [Lombok](https://projectlombok.org/)
 * [Swagger](https://swagger.io/)
 * [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+* [Insomnia](https://insomnia.rest/)
 
 ## 📖 Modelo Conceitual DER
 Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
