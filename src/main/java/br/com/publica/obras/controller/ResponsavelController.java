@@ -15,8 +15,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.UUID;
 
-@Tag(name = "Responsavel")
 @RestController
+@Tag(name = "Responsavel")
 @RequestMapping("responsavel")
 public class ResponsavelController {
 
