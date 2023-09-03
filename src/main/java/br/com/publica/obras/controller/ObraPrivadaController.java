@@ -6,6 +6,7 @@ import br.com.publica.obras.domain.obraPrivada.ObraPrivada;
 import br.com.publica.obras.repository.ObraPrivadaRepository;
 import br.com.publica.obras.repository.ResponsavelRepository;
 import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.UUID;
 
 @RestController
-@Tag(name = "Cadastrar Obras Públicas")
+@Tag(name = "Obra Privada")
 @RequestMapping("obraprivada")
 public class ObraPrivadaController {
 
@@ -30,6 +31,7 @@ public class ObraPrivadaController {
 
     @PostMapping
     @Transactional
+    @Operation(summary = "Realiza o cadastro da obra privada e retorna a mesma")
     public ResponseEntity<DadosDetalhamentoObraPrivada> cadastrarObraPrivada(@RequestBody @Valid DadosCadastroObraPrivada dadosCadastroObraPrivada,
                                                                              UriComponentsBuilder uriComponentsBuilder) {
         var obraPrivada = new ObraPrivada(dadosCadastroObraPrivada);
