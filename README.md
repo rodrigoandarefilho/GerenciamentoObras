@@ -76,7 +76,7 @@ tem um breve comentário sobre o motivo da API, contendo meu linkedin, email par
 > Facilitando o entendimento do mesmo.
 
 ## ✒️ Autor
-#### Rodrigo Andare Filho
+#### 🧑‍💻 Rodrigo Andare Filho
 
 
 
