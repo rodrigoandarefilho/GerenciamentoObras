@@ -33,12 +33,13 @@ Precisa ter instalado e configurado:
 * IntelliJ (versão: 2023.1.5)
 * Realizar o clone do repositório e de preferência deixar na pasta C: do computador
 
-####❕É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
-Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
-1. DataBase: GERENCIAMENTO_OBRAS
-2. porta: 3306  
-3. user: root  
-4. senha: 1234
+> **Important**
+> : É recomendado ao instalar o SGBD MySQL, as recomendações a seguir:
+> Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino modificar o endereco/porta, user e password.
+> 1. DataBase: GERENCIAMENTO_OBRAS
+> 2. porta: 3306  
+> 3. user: root  
+> 4. senha: 1234
 
 ## 📋 Execução da API
 #### Após ter realizado download, instalado e configurado os pré-requisitos realize os seguintes passos para executar a API:
@@ -49,19 +50,23 @@ Mas fique tranquilo, caso já tenha instalado com outras configurações, ensino
 Primeira forma de executar o projeto:
 1. Clique na lateral direita em "M" (Maven) > depois na aba "obras" > dê dois cliques em "package". Desta forma é criado um arquivo .jar
 2. Na pasta em que clonou, navegue em "obras" > "target" e encontrará um arquivo chamado "obras-0.0.1-SNAPSHOT"
-3. Abra o terminal dentro da pasta "target" e realize o comando abaixo:
+3. Abra o terminal dentro da pasta "target" e realize o comando abaixo: </br>
+````
 java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://localhost/GERENCIAMENTO_OBRAS -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWORD=1234 -jar target/api-0.0.1-SNAPSHOT.jar
 
-❕CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS:
-* Substituir <endereco: porta>, <username> e <password>, pela sua configuração local !
-- [x] Pronto, problema resolvido, caso seu problema seja endereço, user ou senha diferente do recomendado.
+````
+> **Note**
+> : CASO TENHA ENDEREÇO, USUARIO OU SENHA DIFERENTES DO RECOMENDADO SEGUIR OS PRÓXIMOS PASSOS: </br>
+> Substituir {endereco: porta}, {username} e {password} pela sua configuração local ! </br>
+>
+> java "-Dspring.profiles.active=prod" -DDATASOURCE_URL=jdbc:mysql://{endereco: porta}/GERENCIAMENTO_OBRAS -DDATASOURCE_USERNAME={username} -DDATASOURCE_PASSWORD={password} > jar target/api-0.0.1-SNAPSHOT.jar
 
-Segunda forma de executar o projeto:
+Segunda forma de executar o projeto:</br>
 1.1. Na lateral esquerda abra as seguintes abas "src" > "main" > "java" > "br.com.publica.obras"
 1.2. Clique na seta "verde" e em seguida execute o projeto.
 
 ## Documentação da API
-A documentação da API foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
+Foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
 tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
 ![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/9546ae04-c5fd-4236-978a-f6b4c8b470e6)
