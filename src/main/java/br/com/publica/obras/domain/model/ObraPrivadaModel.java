@@ -2,6 +2,7 @@ package br.com.publica.obras.domain.model;
 
 import br.com.publica.obras.domain.entity.ObraPrivadaEntity;
 import br.com.publica.obras.domain.entity.ResponsavelEntity;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.util.UUID;
 
 public record ObraPrivadaModel(UUID id,
                                String descricao,
+                               @JsonFormat(pattern = "dd/MM/yyyy")
                                LocalDate dataCadastro,
                                String zona, BigDecimal areaTotal,
                                BigDecimal numero,
