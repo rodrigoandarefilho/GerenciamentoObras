@@ -80,6 +80,8 @@ tem um breve comentário sobre o motivo da API, contendo meu linkedin, email par
 ## ✒️ Autor
 #### 🧑‍💻 Rodrigo Andare Filho
 
+* Projeto realizado em memória para Sany ! 🐶💕
+
 
 
 
