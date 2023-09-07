@@ -71,7 +71,7 @@ Segunda forma de executar o projeto:</br>
 Foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
 tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
-![image](![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de45552b-6b4b-4d2d-954f-4224e2a56de1)
+![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de45552b-6b4b-4d2d-954f-4224e2a56de1)
 
 > **Note**
 > Também estou disponibilizando arquivos exportados do Insomnia, com testes de requisições.</br>
