@@ -21,11 +21,18 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 * [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 * [Insomnia](https://insomnia.rest/)
 
-## 📖 Modelo Conceitual DER
+## 📖 Modelo Conceitual DER(Diagrama Entidade-Relacionamento)
 Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
 
  <div align="center"> 
   <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3" width="600" />
+ </div>
+
+ ## 📖 Modelo Relacional MER(Modelo Entidade Relacionamento)
+Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
+
+ <div align="center"> 
+  <img src="![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9)" width="600" />
  </div>
 
 ## 📋 Pré-requisitos / Instalação / Configuração
