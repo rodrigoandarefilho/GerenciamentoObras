@@ -37,7 +37,7 @@ Foi utilizado o modelo 2 no projeto, porém foi realizado toda orientação a ob
 deixando o código mais limpo e organizado.
 
  <div align="center"> 
-  <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9" width="600" />
+  <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9" width="800" />
  </div>
 
 ## 📋 Pré-requisitos / Instalação / Configuração
