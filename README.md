@@ -28,11 +28,16 @@ Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
   <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3" width="600" />
  </div>
 
- ## 📖 Modelo Relacional MER(Modelo Entidade Relacionamento)
-Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
+ ## 📖 Modelo Relacional MER(Modelo Entidade-Relacionamento)
+Após realizado o DER, foi realizado o modelo MER. Desta forma, a montagem do banco pode ser realizada de duas formas.
+O modelo 1, é a separaçao das entidades "obra", "publica" e "privada" criando então 3 tabelas, porém pode diminuir um pouco
+o desempenho das consultas utilizando o JOIN. O que seria o oposto no modelo 2, criando um "tabelão" de "obra" com os atributos 
+de "publica" e "privada" e quando for utilizar a consulta não precisamos realizar o JOIN.
+Foi utilizado o modelo 2 no projeto, porém foi realizado toda orientação a objeto nas classes envolvidas, 
+deixando o código mais limpo e organizado.
 
  <div align="center"> 
-  <img src="![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9)" width="600" />
+  <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9" width="600" />
  </div>
 
 ## 📋 Pré-requisitos / Instalação / Configuração
