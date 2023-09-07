@@ -21,10 +21,24 @@ O projeto consiste em criar uma API de gerenciamento de obras na linguagem de pr
 * [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 * [Insomnia](https://insomnia.rest/)
 
-## 📖 Modelo Conceitual DER
+## 📖 Modelo Conceitual DER(Diagrama Entidade-Relacionamento)
 Para melhor entendimento do projeto, foi montado um modelo conceitual DER.
 
-![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3)
+ <div align="center"> 
+  <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/6c244706-7218-4565-b6e2-35a6ed59f7e3" width="600" />
+ </div>
+
+ ## 📖 Modelo Relacional MER(Modelo Entidade-Relacionamento)
+Após realizado o DER, foi realizado o modelo MER. Desta forma, a montagem do banco pode ser realizada de duas formas.
+O modelo 1, é a separaçao das entidades "obra", "publica" e "privada" criando então 3 tabelas, porém pode diminuir um pouco
+o desempenho das consultas utilizando o JOIN. O que seria o oposto no modelo 2, criando um "tabelão" de "obra" com os atributos 
+de "publica" e "privada" e quando for utilizar a consulta não precisamos realizar o JOIN.
+Foi utilizado o modelo 2 no projeto, porém foi realizado toda orientação a objeto nas classes envolvidas, 
+deixando o código mais limpo e organizado.
+
+ <div align="center"> 
+  <img src="https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de67a0a6-61e8-4bfe-99bc-0b71988bc6e9" width="800" />
+ </div>
 
 ## 📋 Pré-requisitos / Instalação / Configuração
 Precisa ter instalado e configurado:
@@ -71,7 +85,7 @@ Segunda forma de executar o projeto:</br>
 Foi realizada com o Swagger, desta forma ao executar a API acessar o link [documentação da API](http://localhost:8080/swagger-ui/index.html#),
 tem um breve comentário sobre o motivo da API, contendo meu linkedin, email para contato e em seguida estão as requisições que podem ser realizadas também contendo exemplos do que é necessário para realizar tal requisição.
 
-![image](![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de45552b-6b4b-4d2d-954f-4224e2a56de1)
+![image](https://github.com/rodrigoandarefilho/GerenciamentoObras/assets/32442551/de45552b-6b4b-4d2d-954f-4224e2a56de1)
 
 > **Note**
 > Também estou disponibilizando arquivos exportados do Insomnia, com testes de requisições.</br>
@@ -79,6 +93,8 @@ tem um breve comentário sobre o motivo da API, contendo meu linkedin, email par
 
 ## ✒️ Autor
 #### 🧑‍💻 Rodrigo Andare Filho
+
+* Projeto realizado em memória para Sany ! 🐶💕
 
 
 
